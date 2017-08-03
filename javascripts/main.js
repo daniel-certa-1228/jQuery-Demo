@@ -39,6 +39,9 @@ $(document).ready(function(){
 	$.ajax({
 		url:"javascripts/songs.json"
 	}).done(functionIwantJqueryToExecute)
+	  .fail(function(error) {
+	  	console.log( "error", error );
+	  })	
 
 	function functionIwantJqueryToExecute(songlist) {
 		console.log( "songlist.songs", songlist.songs );
@@ -51,6 +54,5 @@ $(document).ready(function(){
 			$("#list-of-songs").append(`<p>On the album ${currentSong.album}</p>`)
 		};
 	}
-
 
 });
